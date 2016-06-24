@@ -1,0 +1,101 @@
+
+#menu {
+	POSITION: absolute;
+	HEIGHT:540px; 
+	width:140px;
+	TOP: 30px;
+	LEFT: 10px;
+    font-family: verdana, tahoma, helvetica, arial, sans-serif;
+	font-size:12px;	
+	border:solid 0px;
+}                    
+ 
+#menu DT,#menu DL,#menu DD,#menu UL,#menu LI {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 2px; 
+	PADDING-TOP: 2px; 
+	LIST-STYLE-TYPE: none;
+	width:100%;
+
+}
+#menu DT {
+	MARGIN: 0px 0px 0px 0px; 
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	width:100%;
+}
+#menu DD,#menu DL{
+	MARGIN: 0px 0px 0px 0px; 
+	PADDING-TOP: 0px;
+	PADDING-BOTTOM: 0px;
+	width:100%;
+}
+#menu UL {
+	MARGIN: 0px 0px 0px 0px; 
+	/*Este es el fondo del segundo nivel de menús*/
+	background-color: #fffcfa;
+	width:100%;
+}
+#menu LI {
+	MARGIN: 0px 0px 0px 0px; 
+	PADDING-TOP: 4px;
+	PADDING-BOTTOM: 3px;
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	width:100%;
+}
+
+#menu A {
+	COLOR: #ff8000; 
+	TEXT-DECORATION: none;
+}
+#menu A:hover {
+	COLOR: #ff8000; 
+}
+#menu DT A {
+	COLOR: #ff8000;
+}
+#menu DT A:hover {
+	COLOR: #ff8000;
+}
+#menu DT A:active {
+	COLOR: #ff8000;
+}
+
+
+#menu DL:hover,#menu DL.hovered {
+	/*Este es el fondo del hover del primer nivel de menús*/
+	background-color: #fffcfa;
+}
+#menu LI:hover,#menu LI.hovered {
+	/*Este es el fondo del hover del segundo nivel de menús*/
+	background-color: #fff0e8;
+}
+
+.menuOn {
+	/*Este es el fondo del primer nivel de menús cuando está activo*/
+	background-color: #ffc0a0;
+	border-bottom: #ff8000 1px dashed;
+}
+.menuOff {
+	/*Este es el fondo del primer nivel de menús cuando NO está activo*/
+	background-color: #fff0e8;
+	border-bottom: #ff8000 1px dashed;
+}
+
+.smenuOn,.smenuOff {
+	LEFT: 0px; 
+	WIDTH: 100%; 
+	POSITION: absolute; 	
+}
+.smenuOn {
+	display:block;
+}
+.smenuOff {
+	display:none;
+}
+.menuOn,.menuOff {
+	FLOAT: left;
+}
+ 	

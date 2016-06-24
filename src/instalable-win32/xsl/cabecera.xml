@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<empresa>
+	<nombre>ADIMDE</nombre>
+	<direccion>Dirección y Código Postal</direccion>
+	<telefono>Teléfono</telefono>
+	<fax>Fax</fax>
+	<email>Dirección de Correo</email>
+	<numeroRegistro>CIF</numeroRegistro>
+	<imgurl>c:\\instelec-app\\xsl\\inicio.gif</imgurl>	
+</empresa>

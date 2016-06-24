@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<title>adimde-HomePage</title>
+<link rel="stylesheet" type="text/css" media="all" href="/adimde/css/calendar.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="/adimde/css/administracion.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="/adimde/css/menu.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="/adimde/css/titulos.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="/adimde/css/validation.css"/>
+<script src="/adimde/js/utils/prototype.js" type="text/javascript"></script>
+<script src="/adimde/js/utils/scriptaculous.js" type="text/javascript"></script>
+<script src='/adimde/js/utils/rico.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_widgets.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_filtros.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_estructura.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_transformadores.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_utils.js' type="text/javascript"></script>
+<script src="/adimde/js/utils/zk_editors.js" type="text/javascript"></script>
+<script src="/adimde/js/utils/calendar.js" type="text/javascript"></script>
+<script src="/adimde/js/utils/calendar-setup.js" type="text/javascript"></script>							
+<script src="/adimde/js/utils/calendar-lang/calendar-es.js" type="text/javascript"></script>
+<script src="/adimde/js/utils/validation.js" type="text/javascript" CHARSET="ISO-8859-1"></script>
+<script src="/adimde/js/utils/validation_lang_es.js" type="text/javascript" CHARSET="ISO-8859-1"></script>
+<script src="/adimde/js/extras.js" type="text/javascript"></script>
+<script src="/adimde/js/administracion.js" type="text/javascript" CHARSET="ISO-8859-1"></script>
+<script src="/adimde/js/crearObjetos.js" type="text/javascript" CHARSET="ISO-8859-1"></script>
+<script src="/adimde/js/objetos.js" type="text/javascript" CHARSET="ISO-8859-1"></script>
+<script src="/adimde/js/alarmas.js" type="text/javascript"></script>
+<script src="/adimde/js/ie.js" type="text/javascript"></script>
+
+<script language="javascript" type="">
+
+var objElemento;
+ function iniciarObj()
+ {
+ objElemento = new objetoElemento();
+ }
+
+ function verAlarmas()
+{
+ var strAlarmaLinks = 'Producciones en Ejecución';
+ var strAlarmaFiltro ="1";
+ var strAlarmaFunctions ="verProducciones()";
+ cargarAlarmas(strAlarmaLinks, strAlarmaFiltro, strAlarmaFunctions);
+ }
+
+ </script>
+
+</head>
+<body onLoad="iniciarObj();preloadMenu();ponerFiltro('');resetParam();resetQuery();limpiar();verAlarmas();">
+<img src="../img/icono.gif" class="icono">			  
+<div id="menu">
+  <DL class="menuOff"><DT ><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verAlarmas();"><img src="../img/inicio.gif" style="border:0px;float:left;">&nbsp;Inicio</a></DT><DD class="smenuOff"><UL><LI>&nbsp;</LI></UL></DD></DL>  
+  <DL class="menuOff"><DT ><a href="#"><img src="../img/3.gif" style="border:0px;float:left;">&nbsp;Configuración</a></DT><DD class="smenuOff"><UL>
+  <li id="nav-Perfiles" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verPerfiles();">Perfiles</a></li>  
+  <li id="nav-Turnos" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verTurnos();">Turnos</a></li>  
+  <li id="nav-Perfilturno" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verPerfilturno();">Perfilturno</a></li>     
+  <li id="nav-Operarios" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verOperarios();">Operarios</a></li>  
+  <li id="nav-Centros" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verCentros();">Centros</a></li>   
+  <li id="nav-Tipotrabajos" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verTipotrabajos();">Tipos de trabajo</a></li>   
+  <li id="nav-Unidadesmedida" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verUnidadesmedida();">Unidades de medida</a></li>   
+  <!--<li id="nav-Estadosproduccion" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verEstadosproduccion();">Estados de producción</a></li>   -->
+  </ul></DD></DL>
+  <DL class="menuOn"><DT ><a href="#"><img src="../img/7.gif" style="border:0px;float:left;">&nbsp;Gestión</a></DT><DD class="smenuOn"><UL>  
+  <li id="nav-Producciones" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verProducciones();">Producciones</a></li>
+  <li id="nav-Productos" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verProductos();">Productos</a></li>    
+  <li id="nav-Materiales" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verMateriales();">Materiales</a></li>    
+  <li id="nav-Composiciones" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verComposiciones();">Composiciones</a></li>  
+  </ul></DD></DL>
+  <DL class="menuOff"><DT ><a href="#"><img src="../img/5.gif" style="border:0px;float:left;">&nbsp;Partes</a></DT><DD class="smenuOff"><UL>
+  <li id="nav-Partes" class="inlineLeft"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verPartes();">Partes</a></li>
+  </ul></DD></DL>  
+</div>
+
+ <div id='divPathHTML'></div>
+
+ <div class="div_global">
+  <div id="div_query" name="div_query">
+  </div>  
+  <div id="div_header">
+  </div>
+  <div id="container">
+  </div>
+  <div id='placeholder' name='placeholder' class='placeholder'>
+  </div> 
+  <div id="div_nuevo" name="div_nuevo">
+  </div>    
+ </div>
+ 
+<input type="hidden" id="strParam" value="">
+<input type="hidden" id="strQuery" value="">
+<input type="hidden" id="strFiltroParam" value="">
+
+ 
+</body>
+</html>

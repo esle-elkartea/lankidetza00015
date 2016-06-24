@@ -1,0 +1,29 @@
+.titulo
+{
+	display:table-cell;
+	float:left;
+	text-align:right;
+    font-family: verdana, tahoma, helvetica, arial, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color: #ff8040;
+	border-left:1px dashed #ff8040;
+	border-bottom:1px dashed #ff8040;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+     #titulo_Tipotareas, #titulo_Tipomateriales,#titulo_Clientes, #titulo_Trabajadores, #titulo_Categorias{
+      /*background:url("../img/right_both_7.gif") no-repeat right top;*/
+	  background-color:#fff0e8;
+      }
+
+    #titulo_Materiales, #titulo_Tareas,#titulo_Trabajos, #titulo_Ordenestrabajo{
+/*      background:url("../img/right_both_1.gif") no-repeat right top;*/
+	  background-color:#fff0e8;
+      }        
+
+    #titulo_Partes,#titulo_Lineasparte {
+  /*    background:url("../img/right_both_10.gif") no-repeat right top;*/
+	  background-color:#fff0e8;
+      }    

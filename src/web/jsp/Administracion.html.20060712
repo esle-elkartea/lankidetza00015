@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+<head>
+<title>Adimde-HomePage</title>
+<link rel="stylesheet" type="text/css" media="all" href="/adimde/css/calendar.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="/adimde/css/administracion.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="/adimde/css/menu.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="/adimde/css/validation.css"/>
+<script src="/adimde/js/utils/prototype.js" type="text/javascript"></script>
+<script src="/adimde/js/utils/scriptaculous.js" type="text/javascript"></script>
+<script src='/adimde/js/utils/rico.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_widgets.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_filtros.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_estructura.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_transformadores.js' type="text/javascript"></script>
+<script src='/adimde/js/utils/zk_utils.js' type="text/javascript"></script>
+<script type="text/javascript" src="/adimde/js/utils/zk_editors.js"></script>
+<script type="text/javascript" src="/adimde/js/utils/calendar.js"></script>
+<script type="text/javascript" src="/adimde/js/utils/calendar-setup.js"></script>							
+<script type="text/javascript" src="/adimde/js/utils/calendar-lang/calendar-es.js"></script>
+<script src="/adimde/js/administracion.js" type="text/javascript" CHARSET="ISO-8859-1"></script>
+<script src="/adimde/js/alarmas.js" type="text/javascript"></script>
+<script src="/adimde/js/utils/validation.js" type="text/javascript" CHARSET="ISO-8859-1"></script>
+<script src="/adimde/js/utils/validation_lang_es.js" type="text/javascript" CHARSET="ISO-8859-1"></script>
+
+<script language="javascript" type="">
+
+function verAlarmas()
+{
+ var strAlarmaLinks = '';
+ var strAlarmaFiltro ="";
+ var strAlarmaFunctions ="";
+ cargarAlarmas(strAlarmaLinks, strAlarmaFiltro, strAlarmaFunctions);
+ }
+
+function verPerfiles()
+{
+ $('iModoVisualizacion').value = '0';
+ $('viewedRows').value = '20';
+ $('strTotalRegistros').value = '0';
+ $('strGap').value = '0';
+ $('strTableId').value = 'Perfiles';   
+ $('strFunction').value = 'verPerfiles()';
+ $('strTituloLista').value = 'Lista de Perfiles';
+ $('strTituloForm').value = 'Perfil';  
+ $('tableContentServlet').value = '/adimde/Perfiles/PerfilesTableContentServlet'; 
+ $('strLinkAddServlet').value = '/adimde/Perfiles/AddPerfilesServlet';
+ $('strLinkDeleteServlet').value = '/adimde/Perfiles/DeletePerfilesServlet'; 
+ $('strLinkDuplicarServlet').value = '';
+ $('strLinkEditServlet').value = '/adimde/Perfiles/PerfilesElementServlet'; 
+ $('strLinkDetallePdfServlet').value = '/adimde/Perfiles/GetPerfilesDetallePdfServlet'; 
+ $('strLinkInformePdfServlet').value = '';   
+ $('strLinkListaPdfServlet').value = '/adimde/Perfiles/PerfilesTableContentPdfServlet';  
+ $('strLinkEditParam').value = 'perfiles.IDPERFIL='; 
+ $('strCampos').value = 'perfiles.DESCRIPCION;FREE_EDITAR;FREE_BORRAR'; 
+ $('strTipoEditor').value = 'NORMAL;FREE_EDITAR;FREE_BORRAR'; 
+ $('strCamposDec').value = 'Descripción;Editar;Borrar';
+ $('strCamposWidth').value = '90%;5%;5%';
+ $('strLinksUlContentServlet').value = ';;'; 
+ $('strMetodosController').value = 'DescripcionPerfilesParsed;EditPerfiles;DeletePerfiles';
+ $('strLinksUpdateServlet').value = '/adimde/Perfiles/UpdateDescripcionServlet;editar;borrar'; 
+ $('strEsOrdenable').value="1;0;0";  
+ $('strEventos').value = 'dblclick;click;click';
+ $('strValidarColumnasGrid').value = 'requerido-es;;';  
+ $('strFormCampos').value = 'perfiles.IDPERFIL;perfiles.DESCRIPCION'; 
+ $('strFormCamposOblig').value = '1;1';  
+ $('strFormTipoEditor').value = 'HIDDEN;NORMAL'; 
+ $('strFormCamposDec').value = 'IDPERFIL;Descripción'; 
+ $('strFormCamposWidth').value = ';400px';  
+ $('strFormLinksUlContentServlet').value = ';'; 
+ $('strFormLinksElementServlet').value = ';';
+ $('strFormMetodosController').value = 'Idperfil;DescripcionPerfilesParsed';  
+ $('strValidarCamposForm').value= ';requerido-es';  
+ $('strFormCabeceraLinks').value = '';
+ $('strFormCabeceraFunctions').value = ')';  
+ $('strCabeceraLinks').value = '';
+ $('strCabeceraFunctions').value = '';  
+ $('strFiltroLinks').value = '';
+ $('strFiltroFunctions').value = ''; 
+ $('strSeparadorFecha').value ="-";
+ $('strSeparadorHora').value =":";    
+ cargaQueryGrid();
+ cargaGrid();
+ crear();
+ } 
+
+function verTurnos()
+{
+ $('iModoVisualizacion').value = '0';
+ $('viewedRows').value = '20';
+ $('strTotalRegistros').value = '0';
+ $('strGap').value = '0';
+ $('strTableId').value = 'Turnos';   
+ $('strFunction').value = 'verTurnos()';
+ $('strTituloLista').value = 'Lista de Turnos';
+ $('strTituloForm').value = 'Turno';  
+ $('tableContentServlet').value = '/adimde/Turnos/TurnosTableContentServlet'; 
+ $('strLinkAddServlet').value = '/adimde/Turnos/AddTurnosServlet';
+ $('strLinkDeleteServlet').value = '/adimde/Turnos/DeleteTurnosServlet'; 
+ $('strLinkDuplicarServlet').value = '';
+ $('strLinkEditServlet').value = '/adimde/Turnos/TurnosElementServlet'; 
+ $('strLinkDetallePdfServlet').value = '/adimde/Turnos/GetTurnosDetallePdfServlet'; 
+ $('strLinkInformePdfServlet').value = '';   
+ $('strLinkListaPdfServlet').value = '/adimde/Turnos/TurnosTableContentPdfServlet';  
+ $('strLinkEditParam').value = 'turnos.IDTURNO='; 
+ $('strCampos').value = 'turnos.DESCRIPCION;FREE_EDITAR;FREE_BORRAR'; 
+ $('strTipoEditor').value = 'NORMAL;FREE_EDITAR;FREE_BORRAR'; 
+ $('strCamposDec').value = 'Descripción;Editar;Borrar';
+ $('strCamposWidth').value = '90%;5%;5%';
+ $('strLinksUlContentServlet').value = ';;'; 
+ $('strMetodosController').value = 'DescripcionTurnosParsed;EditTurnos;DeleteTurnos';
+ $('strLinksUpdateServlet').value = '/adimde/Turnos/UpdateDescripcionServlet;editar;borrar'; 
+ $('strEsOrdenable').value="1;0;0";  
+ $('strEventos').value = 'dblclick;click;click';
+ $('strValidarColumnasGrid').value = 'requerido-es;;';  
+ $('strFormCampos').value = 'turnos.IDTURNO;turnos.DESCRIPCION'; 
+ $('strFormCamposOblig').value = '1;1';  
+ $('strFormTipoEditor').value = 'HIDDEN;NORMAL'; 
+ $('strFormCamposDec').value = 'IDTURNO;Descripción'; 
+ $('strFormCamposWidth').value = ';400px';  
+ $('strFormLinksUlContentServlet').value = ';'; 
+ $('strFormLinksElementServlet').value = ';';
+ $('strFormMetodosController').value = 'Idturno;DescripcionTurnosParsed';  
+ $('strValidarCamposForm').value= ';requerido-es';  
+ $('strFormCabeceraLinks').value = '';
+ $('strFormCabeceraFunctions').value = ')';  
+ $('strCabeceraLinks').value = '';
+ $('strCabeceraFunctions').value = '';  
+ $('strFiltroLinks').value = '';
+ $('strFiltroFunctions').value = ''; 
+ $('strSeparadorFecha').value ="-";
+ $('strSeparadorHora').value =":";    
+ cargaQueryGrid();
+ cargaGrid();
+ crear();
+ } 
+
+function verPerfilturno()
+{
+ $('iModoVisualizacion').value = '0';
+ $('viewedRows').value = '20';
+ $('strTotalRegistros').value = '0';
+ $('strGap').value = '0';
+ $('strTableId').value = 'Perfilturno';   
+ $('strFunction').value = 'verPerfilturno()';
+ $('strTituloLista').value = 'Lista de Perfilturno';
+ $('strTituloForm').value = 'Perfil-turno';  
+ $('tableContentServlet').value = '/adimde/Perfilturno/PerfilturnoTableContentServlet'; 
+ $('strLinkAddServlet').value = '/adimde/Perfilturno/AddPerfilturnoServlet';
+ $('strLinkDeleteServlet').value = '/adimde/Perfilturno/DeletePerfilturnoServlet'; 
+ $('strLinkDuplicarServlet').value = '';
+ $('strLinkEditServlet').value = '/adimde/Perfilturno/PerfilturnoElementServlet'; 
+ $('strLinkDetallePdfServlet').value = '/adimde/Perfilturno/GetPerfilturnoDetallePdfServlet'; 
+ $('strLinkInformePdfServlet').value = '';   
+ $('strLinkListaPdfServlet').value = '/adimde/Perfilturno/PerfilturnoTableContentPdfServlet';  
+ $('strLinkEditParam').value = 'perfilturno.IDTP='; 
+ $('strCampos').value = 'perfilturno.IDPERFIL;perfilturno.IDTURNO;perfilturno.VALORCOSTE;FREE_EDITAR;FREE_BORRAR'; 
+ $('strTipoEditor').value = 'AUTO;AUTO;NORMAL;FREE_EDITAR;FREE_BORRAR'; 
+ $('strCamposDec').value = 'Perfil;Turno;Valor-coste;Editar;Borrar';
+ $('strCamposWidth').value = '30%;30%;30%;5%;5%';
+ $('strLinksUlContentServlet').value = '/adimde/Perfiles/PerfilesUlContentServlet;/adimde/Turnos/TurnosUlContentServlet;;;'; 
+ $('strMetodosController').value = 'IdperfilPerfilturnoParsed;IdturnoPerfilturnoParsed;ValorcostePerfilturnoParsed;EditPerfilturno;DeletePerfilturno';
+ $('strLinksUpdateServlet').value = '/adimde/Perfilturno/UpdateIdperfilServlet;/adimde/Perfilturno/UpdateIdturnoServlet;/adimde/Perfilturno/UpdateValorcosteServlet;editar;borrar'; 
+ $('strEsOrdenable').value="1;1;1;0;0";  
+ $('strEventos').value = 'dblclick;dblclick;dblclick;click;click';
+ $('strValidarColumnasGrid').value = 'requerido-es;requerido-es;requerido-es;;';  
+ $('strFormCampos').value = 'perfilturno.IDTP;perfilturno.IDPERFIL;perfilturno.IDTURNO;perfilturno.VALORCOSTE'; 
+ $('strFormCamposOblig').value = '1,1;1;1';  
+ $('strFormTipoEditor').value = 'HIDDEN;AUTO;AUTO;NORMAL'; 
+ $('strFormCamposDec').value = 'IDTP;Perfil;Turno;valor-coste'; 
+ $('strFormCamposWidth').value = ';350px;350px;400px';  
+ $('strFormLinksUlContentServlet').value = ';/adimde/Perfiles/PerfilesUlContentServlet;/adimde/Turnos/TurnosUlContentServlet;'; 
+ $('strFormLinksElementServlet').value = ';/adimde/Perfilturno/PerfilturnoPerfilServlet;/adimde/Perfilturno/PerfilturnoTurnoServlet;';
+ $('strFormMetodosController').value = 'Idtp;IdperfilPerfilturnoParsed;IdturnoPerfilturnoParsed;ValorcostePerfilturnoParsed';  
+ $('strValidarCamposForm').value= ';requerido-es;requerido-es;requerido-es';  
+ $('strFormCabeceraLinks').value = '';
+ $('strFormCabeceraFunctions').value = ')';  
+ $('strCabeceraLinks').value = '';
+ $('strCabeceraFunctions').value = '';  
+ $('strFiltroLinks').value = '';
+ $('strFiltroFunctions').value = ''; 
+ $('strSeparadorFecha').value ="-";
+ $('strSeparadorHora').value =":";    
+ cargaQueryGrid();
+ cargaGrid();
+ crear();
+ } 
+ 
+function verOperarios()
+{
+ $('iModoVisualizacion').value = '0';
+ $('viewedRows').value = '20';
+ $('strTotalRegistros').value = '0';
+ $('strGap').value = '0';
+ $('strTableId').value = 'Operarios';   
+ $('strFunction').value = 'verOperarios()';
+ $('strTituloLista').value = 'Lista de Operarios';
+ $('strTituloForm').value = 'Operario';  
+ $('tableContentServlet').value = '/adimde/Operarios/OperariosTableContentServlet'; 
+ $('strLinkAddServlet').value = '/adimde/Operarios/AddOperariosServlet';
+ $('strLinkDeleteServlet').value = '/adimde/Operarios/DeleteOperariosServlet'; 
+ $('strLinkDuplicarServlet').value = '';
+ $('strLinkEditServlet').value = '/adimde/Operarios/OperariosElementServlet'; 
+ $('strLinkDetallePdfServlet').value = '/adimde/Operarios/GetOperariosDetallePdfServlet'; 
+ $('strLinkInformePdfServlet').value = '';   
+ $('strLinkListaPdfServlet').value = '/adimde/Operarios/OperariosTableContentPdfServlet';  
+ $('strLinkEditParam').value = 'operarios.IDOPERARIO='; 
+ $('strCampos').value = 'operarios.NIF;operarios.NOMBRE;operarios.APELLIDOUNO;operarios.NUMEROSS;operarios.TELEFONO;operarios.MOVIL;operarios.FECHAALTA;FREE_EDITAR;FREE_BORRAR'; 
+ $('strTipoEditor').value = 'NORMAL;NORMAL;NORMAL;NORMAL;NORMAL;NORMAL;DATE;FREE_EDITAR;FREE_BORRAR'; 
+ $('strCamposDec').value = 'NIF;Nombre;Primer Apellido;Nº S.S.;Teléfono;Móvil;Fecha-alta;Editar;Borrar';
+ $('strCamposWidth').value = '11%;15%;15%;14%;12%;12%;10%;5%;5%';
+ $('strLinksUlContentServlet').value = ';;;;;;;;;'; 
+ $('strMetodosController').value = 'NifOperariosParsed;NombreOperariosParsed;ApellidounoOperariosParsed;NumerossOperariosParsed;TelefonoOperariosParsed;MovilOperariosParsed;FechaaltaOperariosParsed;EditOperarios;DeleteOperarios';
+ $('strLinksUpdateServlet').value = '/adimde/Operarios/UpdateNifServlet;/adimde/Operarios/UpdateNombreServlet;/adimde/Operarios/UpdateApellidounoServlet;/adimde/Operarios/UpdateNumerossServlet;/adimde/Operarios/UpdateTelefonoServlet;/adimde/Operarios/UpdateMovilServlet;/adimde/Operarios/UpdateFechaaltaServlet;editar;borrar'; 
+ $('strEsOrdenable').value="1;1;1;1;1;1;1;0;0";  
+ $('strEventos').value = 'dblclick;dblclick;dblclick;dblclick;dblclick;dblclick;dblclick;click;click';
+ $('strValidarColumnasGrid').value = ';requerido-es;requerido-es;;;;;;';  
+ $('strFormCampos').value = 'operarios.IDOPERARIO;operarios.IDPERFIL;operarios.IDLOCALIDAD;operarios.NOMBRE;operarios.APELLIDOUNO;operarios.APELLIDODOS;operarios.FECHAALTA;operarios.FECHABAJA;operarios.NIF;operarios.NUMEROSS;operarios.DIRECCION;operarios.CP;operarios.TELEFONO;operarios.MOVIL;operarios.EMAIL'; 
+ $('strFormCamposOblig').value = '1;1;1;1;1;;1;;1;;;;;;;';  
+ $('strFormTipoEditor').value = 'HIDDEN;AUTO;AUTO;NORMAL;NORMAL;NORMAL;DATE;DATE;NORMAL;NORMAL;NORMAL;NORMAL;NORMAL;NORMAL;NORMAL'; 
+ $('strFormCamposDec').value = 'IDOPERARIO;Perfil;Localidad;Nombre;Primer Apellido;Segundo Apellido;Fecha Alta;Fecha Baja;Nif;Número S.S.;Dirección;Cp;Teléfono;Móvil;E-Mail'; 
+ $('strFormCamposWidth').value = ';400px;350px;350px;350px;350px;350px;350px;350px;350px;350px;350px;350px;350px;350px';  
+ $('strFormLinksUlContentServlet').value = ';/adimde/Perfiles/PerfilesUlContentServlet;/adimde/Localidades/LocalidadesUlContentServlet;;;;;;;;;;;;;;;'; 
+ $('strFormLinksElementServlet').value = ';/adimde/Operarios/OperariosPerfilesServlet;/adimde/Operarios/OperariosLocalidadesServlet;;;;;;;;;;;;;;;';
+ $('strFormMetodosController').value = 'Idoperario;IdperfilOperariosParsed;IdlocalidadOperariosParsed;NombreOperariosParsed;ApellidounoOperariosParsed;ApellidodosOperariosParsed;FechaaltaOperariosParsed;FechabajaOperariosParsed;NifOperariosParsed;NumerossOperariosParsed;DireccionOperariosParsed;CpOperariosParsed;TelefonoOperariosParsed;MovilOperariosParsed;EmailOperariosParsed';  
+ $('strValidarCamposForm').value= ';requerido-es;requerido-es;requerido-es;requerido-es;;requerido-es validate-date-separador-es;;requerido-es;;;;;;';  
+ $('strFormCabeceraLinks').value = '';
+ $('strFormCabeceraFunctions').value = ')';  
+ $('strCabeceraLinks').value = '';
+ $('strCabeceraFunctions').value = '';  
+ $('strFiltroLinks').value = '';
+ $('strFiltroFunctions').value = ''; 
+ $('strSeparadorFecha').value ="-";
+ $('strSeparadorHora').value =":";    
+ cargaQueryGrid();
+ cargaGrid();
+ crear();
+ }  
+ 
+
+
+ </script>
+
+</head>
+<body onLoad="ponerFiltro('');resetParam();resetQuery();limpiar();verAlarmas();">
+			  
+<div id="menu">
+  <ul>
+  <li id="nav-perfiles" onclick="document.body.id='perfiles'"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verPerfiles();">Perfiles</a></li>
+  <li id="nav-turnos" onclick="document.body.id='turnos'"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verTurnos();">Turnos</a></li>
+  <li id="nav-perfilturno" onclick="document.body.id='perfilturno'"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verPerfilturno();">Perfilturno</a></li>
+  <li id="nav-operarios" onclick="document.body.id='operarios'"><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verOperarios();">Operarios</a></li>
+  </ul>
+ </div>
+ 
+
+ <div class="div_global">
+  <div id="div_query" name="div_query">
+  </div>  
+  <div id="div_header">
+  </div>
+  <div id="container">
+  </div>
+  <div id='placeholder' name='placeholder' class='placeholder'>
+  </div> 
+  <div id="div_nuevo" name="div_nuevo">
+  </div>    
+ </div>
+ 
+  <div id="pie">
+  <span class='inicio'>
+  <ul>
+  <li><a href="#" onclick="ponerFiltro('');resetParam();resetQuery();limpiar();verAlarmas();">Inicio</a></li>
+</ul> 
+</span>
+adimde
+ </div>
+<input type="hidden" id="strParam" value="">
+<input type="hidden" id="strQuery" value="">
+<input type="hidden" id="strFiltroParam" value="">
+
+<input type="hidden" id="iModoVisualizacion" value="">
+<input type="hidden" id="viewedRows" value="">
+<input type="hidden" id="strTotalRegistros" value="">
+<input type="hidden" id="strGap" value="">
+
+<input type="hidden" id="strTableId" value="">
+<input type="hidden" id="strFunction" value="">
+<input type="hidden" id="strTituloLista" value="">
+<input type="hidden" id="strTituloForm" value="">
+<input type="hidden" id="tableContentServlet" value="">
+<input type="hidden" id="strLinkAddServlet" value="">
+<input type="hidden" id="strLinkDeleteServlet" value="">
+<input type="hidden" id="strLinkDuplicarServlet" value="">
+<input type="hidden" id="strLinkEditServlet" value="">
+<input type="hidden" id="strLinkEditParam" value="">
+<input type="hidden" id="strLinkDetallePdfServlet" value="">
+<input type="hidden" id="strLinkInformePdfServlet" value="">
+<input type="hidden" id="strLinkListaPdfServlet" value="">
+
+<input type="hidden" id="strCampos" value="">
+<input type="hidden" id="strTipoEditor" value="">
+<input type="hidden" id="strCamposDec" value="">
+<input type="hidden" id="strCamposWidth" value="">
+<input type="hidden" id="strLinksUlContentServlet" value="">
+<input type="hidden" id="strMetodosController" value="">
+<input type="hidden" id="strLinksUpdateServlet" value="">
+<input type="hidden" id="strEsOrdenable" value="">
+<input type="hidden" id="strEventos" value="">
+<input type="hidden" id="strValidarColumnasGrid" value="">
+
+<input type="hidden" id="strFormCampos" value="">
+<input type="hidden" id="strFormCamposOblig" value="">
+<input type="hidden" id="strFormTipoEditor" value="">
+<input type="hidden" id="strFormCamposDec" value="">
+<input type="hidden" id="strFormCamposWidth" value="">
+<input type="hidden" id="strFormLinksUlContentServlet" value="">
+<input type="hidden" id="strFormLinksElementServlet" value="">
+<input type="hidden" id="strFormMetodosController" value="">
+<input type="hidden" id="strValidarCamposForm" value="">
+
+<input type="hidden" id="strCabeceraLinks" value="">
+<input type="hidden" id="strCabeceraFunctions" value="">
+
+<input type="hidden" id="strFormCabeceraLinks" value="">
+<input type="hidden" id="strFormCabeceraFunctions" value="">
+
+<input type="hidden" id="strFiltroLinks" value="">
+<input type="hidden" id="strFiltroFunctions" value="">
+<input type="hidden" id="strSeparadorFecha" value="">
+<input type="hidden" id="strSeparadorHora" value="">
+ 
+</body>
+</html>

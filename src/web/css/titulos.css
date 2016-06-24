@@ -1,0 +1,26 @@
+.titulo
+{
+	display:table-cell;
+	float:left;
+	text-align:right;
+	font-family:Verdana,Serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#6A5C72;
+	border-left:#bbb solid 1px;
+	border-bottom:#bbb solid 1px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+     #titulo_Turnos, #titulo_Perfiles,#titulo_Perfilturno, #titulo_Centros, #titulo_Operarios, #titulo_Tipotrabajos,#titulo_Unidadesmedida{
+      background:url("../img/right_both_1.gif") no-repeat right top;
+      }
+
+    #titulo_Materiales, #titulo_Composiciones,#titulo_Producciones, #titulo_Productos{
+      background:url("../img/right_both_1.gif") no-repeat right top;
+      }        
+
+    #titulo_Partes {
+      background:url("../img/right_both_1.gif") no-repeat right top;
+      }   

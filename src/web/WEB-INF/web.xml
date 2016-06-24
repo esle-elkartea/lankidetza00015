@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app id="WebApp_9" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+   <!-- General description of your web application -->
+   <display-name>adimde</display-name>
+   <description>
+    	descripcion del proyecto app
+   </description>
+
+	<filter>
+        <filter-name>router</filter-name>
+        <filter-class>net.idtoki.adimde.controller.AppRouter</filter-class>
+        <init-param>
+	      <param-name>rules</param-name>
+	      <param-value>/WEB-INF/config/rules</param-value>
+	   </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>router</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    
+   <!--listener para arrancar el motor del torque clase que implementa el listener para el deploy -->
+
+    <listener>
+     <listener-class>net.idtoki.adimde.app.event.OnStartUp</listener-class>
+    </listener>    
+
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.AppLoginController</servlet-class>
+    </servlet>
+
+
+<servlet>
+        <servlet-name>Centros</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.CentrosController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Composiciones</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.ComposicionesController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Localidades</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.LocalidadesController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Materiales</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.MaterialesController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Operarios</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.OperariosController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Partes</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.PartesController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Perfiles</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.PerfilesController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Perfilturno</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.PerfilturnoController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Producciones</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.ProduccionesController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Productos</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.ProductosController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Provincias</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.ProvinciasController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Tipotrabajos</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.TipotrabajosController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Turnos</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.TurnosController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Estadosproduccion</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.EstadosproduccionController</servlet-class>
+</servlet>
+<servlet>
+        <servlet-name>Unidadesmedida</servlet-name>
+        <servlet-class>net.idtoki.adimde.controller.UnidadesmedidaController</servlet-class>
+</servlet>
+
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login/*</url-pattern>
+    </servlet-mapping>
+
+<servlet-mapping>
+        <servlet-name>Centros</servlet-name>
+        <url-pattern>/Centros/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Composiciones</servlet-name>
+        <url-pattern>/Composiciones/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Localidades</servlet-name>
+        <url-pattern>/Localidades/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Materiales</servlet-name>
+        <url-pattern>/Materiales/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Operarios</servlet-name>
+        <url-pattern>/Operarios/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Partes</servlet-name>
+        <url-pattern>/Partes/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Perfiles</servlet-name>
+        <url-pattern>/Perfiles/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Perfilturno</servlet-name>
+        <url-pattern>/Perfilturno/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Producciones</servlet-name>
+        <url-pattern>/Producciones/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Productos</servlet-name>
+        <url-pattern>/Productos/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Provincias</servlet-name>
+        <url-pattern>/Provincias/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Tipotrabajos</servlet-name>
+        <url-pattern>/Tipotrabajos/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Turnos</servlet-name>
+        <url-pattern>/Turnos/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Estadosproduccion</servlet-name>
+        <url-pattern>/Estadosproduccion/*</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>Unidadesmedida</servlet-name>
+        <url-pattern>/Unidadesmedida/*</url-pattern>
+</servlet-mapping>
+
+</web-app>

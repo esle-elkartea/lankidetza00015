@@ -1,0 +1,107 @@
+
+	
+   #nav-turnos,#nav-perfiles,#nav-perfilturno, #nav-centros,#nav-operarios,#nav-tipotrabajos{
+      background:url("../img/left_both_7.gif") no-repeat left top;
+      }
+     #titulo_Turnos, #nav-turnos a,#titulo_Perfiles,#nav-perfiles a,#titulo_Perfilturno, #nav-perfilturno a,#titulo_Centros, #nav-centros a,#titulo_Operarios, #nav-operarios a,#titulo_Tipotrabajos, #nav-tipotrabajos a{
+      background:url("../img/right_both_7.gif") no-repeat right top;
+      }
+
+    #nav-materiales,#nav-composiciones,#nav-producciones,#nav-productos {
+      background:url("../img/left_both_1.gif") no-repeat left top;
+      }
+
+    #titulo_Materiales, #nav-materiales a ,#titulo_Composiciones,#nav-composiciones a,#titulo_Producciones, #nav-producciones a ,#titulo_Productos, #nav-productos a{
+      background:url("../img/right_both_1.gif") no-repeat right top;
+      }        
+      
+ 
+    #nav-partes {
+      background:url("../img/left_both_10.gif") no-repeat left top;
+      }
+
+    #titulo_Partes, #nav-partes a {
+      background:url("../img/right_both_10.gif") no-repeat right top;
+      }                        
+ 
+         ul#primary-nav,
+        ul#primary-nav ul {
+            width: 150px;
+            margin: 0;
+            padding: 0;
+            background: #fff; /* IE6 Bug */
+            font-size: 100%;
+        }
+
+        ul#primary-nav {
+            float: left;
+            width: 600px;
+        }
+
+        ul#primary-nav:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        ul#primary-nav li {
+            position: relative;
+            list-style: none;
+            float: left;
+            width: 150px; /* Width of Menu Items */
+            z-index:500;
+            display:block;
+        }
+
+        ul#primary-nav li a,
+        ul#primary-nav li li a {
+            display: block;
+            text-decoration: none;
+            color: #777;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Fix IE. Hide from IE Mac \*/
+        * html ul#primary-nav li { float: left; height: 1%; }
+        * html ul#primary-nav li a { height: 1%; }
+        /* End */
+
+        ul#primary-nav ul {
+            position: absolute;
+            display: none;
+        }
+
+        ul#primary-nav ul ul {
+            left: 150px;
+            top: 0;
+        }
+
+        ul#primary-nav li ul li a { padding: 2px 5px; } /* Sub Menu Styles */
+
+        ul#primary-nav li:hover ul ul,
+        ul#primary-nav li:hover ul ul ul,
+        ul#primary-nav li.over ul ul,
+        ul#primary-nav li.over ul ul ul { display: none; } /* Hide sub-menus initially */
+
+        ul#primary-nav li:hover ul,
+        ul#primary-nav li li:hover ul,
+        ul#primary-nav li li li:hover ul,
+        ul#primary-nav li.over ul,
+        ul#primary-nav li li.over ul,
+        ul#primary-nav li li li.over ul { display: block; } /* The magic */
+
+        ul#primary-nav li.menubar { background: transparent url(images/arrow-down.gif) right center no-repeat; }
+        ul#primary-nav li li.menubar { background: transparent url(images/arrow-right.gif) right center no-repeat; }
+ 
+        ul#primary-nav li:hover,
+        ul#primary-nav li.over { background-color: #f9f9f9 !important; }
+
+        ul#primary-nav li a:hover { color: #E2144A; }
+ 
+      
+      #alarmas span {display:block;}
+      #alarmas div {display:block;float:left;width:100%;padding-left:22px;background: url(../img/inicio.gif) 0 0 no-repeat;font-size:16px;font-weight:bold;}
+      .inicio li{display:table-cell;float:left;list-style:none;padding-left:22px;background: url(../img/inicio.gif) 0 0 no-repeat;}	
